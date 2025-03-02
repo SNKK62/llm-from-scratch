@@ -1,4 +1,5 @@
 import re
+from .read_verdict import read
 
 
 class SimpleTokenizerV1:
@@ -39,8 +40,7 @@ class SimpleTokenizerV2:
         return text
 
 
-with open("the-verdict.txt", "r") as file:
-    raw_text = file.read()
+raw_text = read()
 
 preprocessed = re.split(r'([,.:;?_!"()\']|--|\s)', raw_text)
 preprocessed = [item for item in preprocessed if item.strip()]

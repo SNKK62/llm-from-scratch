@@ -1,5 +1,6 @@
 from importlib.metadata import version
 import tiktoken
+from .read_verdict import read
 
 print("tiktoken version: ", version("tiktoken"))
 
@@ -16,8 +17,7 @@ print(integers)
 strings = tokenizer.decode(integers)
 print(strings)
 
-with open("the-verdict.txt", "r") as f:
-    raw_text = f.read()
+raw_text = read()
 
 enc_text = tokenizer.encode(raw_text)
 print(len(enc_text))

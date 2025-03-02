@@ -1,5 +1,6 @@
 import torch
 from ..dataset import create_dataloader_v1
+from .read_verdict import read
 
 input_ids = torch.tensor([2, 3, 5, 1])
 
@@ -11,8 +12,7 @@ token_embedding_layer = torch.nn.Embedding(vocab_size, output_dim)
 
 max_length = 4
 
-with open("the-verdict.txt", "r") as f:
-    raw_text = f.read()
+raw_text = read()
 
 dataloader = create_dataloader_v1(
     raw_text, batch_size=8, max_length=max_length, stride=max_length, shuffle=False
