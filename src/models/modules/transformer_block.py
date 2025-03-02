@@ -1,6 +1,6 @@
-from attention import MultiHeadAttention
-from feed_forward import FeedForward
-from layer_norm import LayerNorm
+from .attention import MultiHeadAttention
+from .feed_forward import FeedForward
+from .layer_norm import LayerNorm
 import torch.nn as nn
 
 
