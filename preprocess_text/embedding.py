@@ -1,5 +1,5 @@
 import torch
-from dataset import create_dataloader_v1
+from ..dataset import create_dataloader_v1
 
 input_ids = torch.tensor([2, 3, 5, 1])
 

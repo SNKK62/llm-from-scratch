@@ -57,4 +57,4 @@ if __name__ == "__main__":
     inputs, target = next(data_iter)
 
     print("Input:\n", inputs)
-    print("Target:\n", target)
+    print("\nTarget:\n", target)
