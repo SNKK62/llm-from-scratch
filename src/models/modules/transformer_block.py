@@ -22,10 +22,17 @@ class TransformerBlock(nn.Module):
 
     def forward(self, x):
         shortcut = x
+        x = self.norm1(x)
         x = self.att(x)
+        x = self.drop_shortcut(x)
+        x = x + shortcut
+
+        shortcut = x
+        x = self.norm2(x)
         x = self.ff(x)
         x = self.drop_shortcut(x)
         x = x + shortcut
+
         return x
 
 
